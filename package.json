@@ -1,0 +1,31 @@
+{
+  "name": "wiki-plugin-diagram-editor",
+  "version": "0.2.0",
+  "description": "A Federated Wiki tool page that edits the diagram item beside it — resolving its subject from the lineup via plugin.consumes, redrawing the source live as you type, and saving back to the source page.",
+  "type": "module",
+  "main": "client/diagram-editor.js",
+  "files": [
+    "client",
+    "pages",
+    "factory.json"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test test/*.test.js",
+    "pretest": "npm run build"
+  },
+  "devDependencies": {
+    "@fortyfoxes/wiki-toolcontext": "file:../wiki-toolcontext",
+    "esbuild": "^0.25.12"
+  },
+  "author": "David Bovill",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-diagram-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-diagram-editor/issues"
+  },
+  "homepage": "https://github.com/Hitchhikers-Guide-to-the-Galaxy/wiki-plugin-diagram-editor#readme"
+}

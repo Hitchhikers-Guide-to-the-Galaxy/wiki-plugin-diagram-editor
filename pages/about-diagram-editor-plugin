@@ -1,0 +1,48 @@
+{
+  "title": "About Diagram-Editor Plugin",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "d42f98a6b65e2a95",
+      "text": "A **tool page** that edits the diagram item beside it — redrawing the source live as you type, and saving back to the page the diagram actually lives on.\n\nThe page below is its own demo: the editor at the bottom has found the diagram above it."
+    },
+    {
+      "type": "diagram",
+      "id": "8345f4745f63bf93",
+      "text": "mermaid\nflowchart LR\n  Click[\"[[Edit Diagram]] link\"] --> Ladder{Which item?}\n  Ladder -->|recorded click| Item[the diagram above the link]\n  Ladder -->|one candidate| Item\n  Ladder -->|several| Picker[ask]\n  Item --> Save[save back to the source page]"
+    },
+    {
+      "type": "markdown",
+      "id": "8efa5df3d10b8f42",
+      "text": "# How it knows\n\nA wiki link cannot carry a parameter. `[[Edit Diagram]]` renders to a fixed anchor, `doInternalLink` takes three arguments, and the new page is rebuilt from its slug alone — anything handed to the click is lost.\n\nIt does not need to. The client already computes the answer. This plugin declares `consumes`, so before every bind the wiki fills in which items to its left in the lineup are diagrams, and waits for them to finish rendering first. Look-left names the page; `consumes` names the item.\n\nThe [[Tool Page]] pattern is the other half of the story."
+    },
+    {
+      "type": "markdown",
+      "id": "75a2a4c68e3412a5",
+      "text": "# Using it\n\nPut an `[[Edit Diagram]]` link under a diagram and click it. The tool opens beside the page and binds to the diagram directly above the link.\n\nWhen several diagrams are in play and nothing says which you meant, it asks rather than guessing. When it cannot save — a ghost page, a historical revision, an item that has since been removed — it says so instead of writing.\n\nType in the editor and the diagram redraws next to you. Nothing is written to the page journal until you press Save."
+    },
+    {
+      "type": "diagram-editor",
+      "id": "e0487c9df4ccc4cd",
+      "text": ""
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "About Diagram-Editor Plugin",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "d42f98a6b65e2a95",
+            "text": "A **tool page** that edits the diagram item beside it — redrawing the source live as you type, and saving back to the page the diagram actually lives on.\n\nThe page below is its own demo: the editor at the bottom has found the diagram above it."
+          }
+        ]
+      },
+      "date": 1785610078612,
+      "provenance": "Authored by an AI agent — Claude Code via the [[fedwiki-create-plugin]] skill. [https://claude.com/claude-code Claude Code]"
+    }
+  ],
+  "plugin": "diagram-editor"
+}
