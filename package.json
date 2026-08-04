@@ -1,7 +1,7 @@
 {
   "name": "wiki-plugin-diagram-editor",
   "version": "0.2.0",
-  "description": "A Federated Wiki tool page that edits the diagram item beside it — resolving its subject from the lineup via plugin.consumes, redrawing the source live as you type, and saving back to the source page.",
+  "description": "A Federated Wiki tool page that edits the diagram item beside it \u2014 resolving its subject from the lineup via plugin.consumes, redrawing the source live as you type, and saving back to the source page.",
   "type": "module",
   "main": "client/diagram-editor.js",
   "files": [
@@ -12,10 +12,11 @@
   "scripts": {
     "build": "node scripts/build.js",
     "test": "node --test test/*.test.js",
-    "pretest": "npm run build"
+    "pretest": "npm run build",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@fortyfoxes/wiki-toolcontext": "file:../wiki-toolcontext",
+    "@fortyfoxes/wiki-toolcontext": "^0.1.0",
     "esbuild": "^0.25.12"
   },
   "author": "David Bovill",
