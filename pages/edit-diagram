@@ -1,0 +1,128 @@
+{
+  "title": "Edit Diagram",
+  "story": [
+    {
+      "type": "markdown",
+      "id": "3a941cd3f8af6765",
+      "text": "Edit the diagram on the page beside this one. Open it from the edit control on any diagram and it binds to that diagram, redrawing live as you type and saving back to the page the diagram actually lives on. Opened on its own it becomes a scratch pad."
+    },
+    {
+      "type": "diagram-editor",
+      "id": "bd156671cd5345e7",
+      "text": ""
+    },
+    {
+      "type": "markdown",
+      "id": "bf7dd4f494e14dea",
+      "text": "# How it finds the diagram"
+    },
+    {
+      "type": "markdown",
+      "id": "9053fa685d479733",
+      "text": "A wiki link cannot carry a parameter. `[[Edit Diagram]]` renders to a fixed anchor, `doInternalLink` takes three arguments, and the page that opens is rebuilt from its slug alone. Whatever you hand the click is gone by the time this page exists."
+    },
+    {
+      "type": "markdown",
+      "id": "6b5a34468a59e9ad",
+      "text": "It does not need to. The client already works it out. This editor declares `consumes`, so before it binds the wiki tells it which items to its left in the lineup are diagrams, and waits for them to finish rendering first. Look-left names the page; `consumes` names the item. The click recorder settles which one you meant when a page holds several \u2014 it notes the item an `[[Edit Diagram]]` link was clicked in, and the subject is the diagram directly above that link. When nothing says which, this page asks rather than guessing."
+    },
+    {
+      "type": "markdown",
+      "id": "7074db1213cf1022",
+      "text": "Opened with no diagram beside it at all \u2014 from the \u2630 menu, say \u2014 it becomes a scratch pad instead, and says which render broker drew for you."
+    },
+    {
+      "type": "markdown",
+      "id": "d0f25b5b32cbbb02",
+      "text": "# Saving"
+    },
+    {
+      "type": "markdown",
+      "id": "7005f254ad12de86",
+      "text": "Typing only redraws. Nothing reaches the page journal until you press Save."
+    },
+    {
+      "type": "markdown",
+      "id": "375f50a1397d1b5e",
+      "text": "It refuses to save onto a ghost page, a historical revision, a page that has left the lineup, or an item that has since been removed \u2014 that last one matters, because the wiki silently appends a duplicate rather than erroring when it cannot find the item it was told to edit. Remote pages and wikis you do not own still save, but say what they are doing first."
+    },
+    {
+      "type": "markdown",
+      "id": "900e6164cbf37647",
+      "text": "# See\n\n- [[About Diagram Editor Plugin]] \u2014 the item this page carries\n- [[About Diagram Plugin]] \u2014 the diagrams it edits"
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "Edit Diagram",
+        "story": [
+          {
+            "type": "markdown",
+            "id": "3a941cd3f8af6765",
+            "text": "Edit the diagram on the page beside this one \u2014 open it from an [[Edit Diagram]] link or the edit control on any diagram, and it binds to that diagram, redrawing live as you type and saving back to the page the diagram actually lives on."
+          },
+          {
+            "type": "diagram-editor",
+            "id": "bd156671cd5345e7",
+            "text": ""
+          },
+          {
+            "type": "markdown",
+            "id": "bf7dd4f494e14dea",
+            "text": "# How it finds the diagram"
+          },
+          {
+            "type": "markdown",
+            "id": "9053fa685d479733",
+            "text": "A wiki link cannot carry a parameter. `[[Edit Diagram]]` renders to a fixed anchor, `doInternalLink` takes three arguments, and the page that opens is rebuilt from its slug alone. Whatever you hand the click is gone by the time this page exists."
+          },
+          {
+            "type": "markdown",
+            "id": "6b5a34468a59e9ad",
+            "text": "It does not need to. The client already works it out. This editor declares `consumes`, so before it binds the wiki tells it which items to its left in the lineup are diagrams, and waits for them to finish rendering first. Look-left names the page; `consumes` names the item. The click recorder settles which one you meant when a page holds several \u2014 it notes the item an `[[Edit Diagram]]` link was clicked in, and the subject is the diagram directly above that link. When nothing says which, this page asks rather than guessing."
+          },
+          {
+            "type": "markdown",
+            "id": "7074db1213cf1022",
+            "text": "Opened with no diagram beside it at all \u2014 from the \u2630 menu, say \u2014 it becomes a scratch pad instead, and says which render broker drew for you."
+          },
+          {
+            "type": "markdown",
+            "id": "d0f25b5b32cbbb02",
+            "text": "# Saving"
+          },
+          {
+            "type": "markdown",
+            "id": "7005f254ad12de86",
+            "text": "Typing only redraws. Nothing reaches the page journal until you press Save."
+          },
+          {
+            "type": "markdown",
+            "id": "375f50a1397d1b5e",
+            "text": "It refuses to save onto a ghost page, a historical revision, a page that has left the lineup, or an item that has since been removed \u2014 that last one matters, because the wiki silently appends a duplicate rather than erroring when it cannot find the item it was told to edit. Remote pages and wikis you do not own still save, but say what they are doing first."
+          },
+          {
+            "type": "markdown",
+            "id": "900e6164cbf37647",
+            "text": "# See\n\n- [[About Diagram Editor Plugin]] \u2014 the item this page carries\n- [[About Diagram Plugin]] \u2014 the diagrams it edits"
+          }
+        ]
+      },
+      "date": 1788359576017,
+      "provenance": "Generated through a dialogue between David Bovill and Claude Code (claude-opus-5), session 2026-09-02 \u2014 Phase 2 of the Edit Diagram Plan: the tool page ships with the plugin so it exists on every site."
+    },
+    {
+      "type": "edit",
+      "id": "3a941cd3f8af6765",
+      "item": {
+        "type": "markdown",
+        "id": "3a941cd3f8af6765",
+        "text": "Edit the diagram on the page beside this one. Open it from the edit control on any diagram and it binds to that diagram, redrawing live as you type and saving back to the page the diagram actually lives on. Opened on its own it becomes a scratch pad."
+      },
+      "date": 1788359662129,
+      "provenance": "Generated through a dialogue between David Bovill and Claude Code (claude-opus-5), session 2026-09-02 \u2014 the menu renders this item's raw text, so the blurb carries no wiki markup."
+    }
+  ]
+}
